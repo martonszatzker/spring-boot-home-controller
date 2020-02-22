@@ -1,0 +1,21 @@
+<html lang="en" xmlns:th="http://www.thymleaf.com">
+
+<head>Meassurement App
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title th:text="${pageTitle}">Page Title</title>
+    <link rel="stylesheet" th:href="@{css/index.css}">
+</head>
+
+<body>
+    <h1>Meassurement Application</h1>
+    <article th:each="meassurement: ${meassurements}">
+        <h1 th:text="${meassurement.location}"></h1>
+        <h1 th:text="${meassurement.crd}"></h1>
+    </article>
+    <footer th:text="#{yourLocation}">
+        <h1 th:text="${meassurement.location}"></h1>
+    </footer>
+    <footer th:text="#{footerText}"></footer>
+</body>
+
+</html>
