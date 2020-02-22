@@ -5,6 +5,7 @@ import com.tzkinformatics.measapp.meassurement.domain.Meassurement;
 import com.tzkinformatics.measapp.meassurement.repository.MeassurementRepository;
 import com.tzkinformatics.measapp.meassurement.service.HomeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -35,6 +36,19 @@ public class HomeController {
         if(id == null) throw new Exception("Nincs ilyen id!!!");
         return "users";
     }
+
+    @Secured("ROLE_ADMIN")
+    @RequestMapping("/custom/home")
+    public String getCustomHome() throws Exception {
+        return "custome home";
+    }
+
+    @Secured("ROLE_USER")
+    @RequestMapping("/custome/secured/home")
+    public String getcSecuredCustomeHome() throws Exception {
+        return "custome secured home";
+    }
+
 
     @ExceptionHandler(Exception.class)
     public String exceptionHandler(HttpServletRequest request,Exception ex, Model model){
