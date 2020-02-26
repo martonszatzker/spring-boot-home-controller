@@ -5,14 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <!--<groupId>com.tzkinformatics.measapp</groupId>
+        <groupId>com.tzkinformatics.measapp</groupId>
         <artifactId>meassurement</artifactId>
-        <version>0.0.1-SNAPSHOT</version>-->
-
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.0.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath/>
     </parent>
 
     <groupId>com.tzkinformatics.measapp</groupId>
@@ -33,11 +29,6 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!--<dependency>
-            <groupId>com.tzkinformatics.measapp</groupId>
-            <artifactId>measapp-backend</artifactId>
-            <version>${project.version}</version>
-        </dependency>-->
     </dependencies>
 
 </project>

@@ -3,6 +3,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
+	<groupId>com.tzkinformatics.measapp</groupId>
+	<artifactId>meassurement</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -12,22 +17,22 @@
 
 	<modules>
 		<module>measapp-backend</module>
-		<!--<module>measapp-web</module>-->
+		<module>measapp-web</module>
 		<module>measapp-api</module>
 	</modules>
 
-	<groupId>com.tzkinformatics.measapp</groupId>
-	<artifactId>meassurement</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>pom</packaging>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
 		<java.version>1.8</java.version>
+		<main.basedir>${project.basedir}</main.basedir>
 	</properties>
 
 	<dependencies>
-
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
 	</dependencies>
 
 	<!--<build>

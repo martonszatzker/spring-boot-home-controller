@@ -24,8 +24,13 @@ public class UserApiServiceImpl implements UserApiService {
     @Autowired
     private UserRepository repository;
 
-    @Autowired
+
     private UserMapper mapper;
+
+    @Autowired
+    public void setMapper(UserMapper mapper) {
+        this.mapper = mapper;
+    }
 
     @Override
     public ResponseEntity<UserData> login(HttpServletRequest request, HttpServletResponse response) throws Throwable {
@@ -47,6 +52,11 @@ public class UserApiServiceImpl implements UserApiService {
 
     @Override
     public ArrayList<UserData> jsonList() throws Throwable {
+        UserEntity entity = new UserEntity();
+        UserEntity entity2 = new UserEntity();
+        repository.save(entity);
+        repository.save(entity2);
+
         log.debug("/*----------jsonList()----------*/");
         ArrayList<UserData> data = mapper.toData(repository.findAll());
         log.debug("/*----------jsonList()----------*/");
