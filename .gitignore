@@ -1,8 +1,15 @@
-HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**
-!**/src/test/**
+yarn-error.log
+node/
+node_modules/
+node_modules
+h2
+RELEASE
+dist
+tmp
+
+
 
 ### STS ###
 .apt_generated
