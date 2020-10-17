@@ -11,7 +11,7 @@ public class DataApi {
 
     @GetMapping
     public String home(Model model) {
-        return "forward:/index.html";
+        return "Szia Marci";
     }
 
 }
