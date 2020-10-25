@@ -21,10 +21,15 @@
   "paths" : {
     "/api/user" : {
       "post" : {
+        "summary" : "Add me as test user",
+        "description" : "",
         "operationId" : "addTestUser",
         "responses" : {
-          "default" : {
-            "description" : "successful operation"
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/UserData"
+            }
           }
         }
       }
@@ -109,10 +114,10 @@
         "location" : {
           "type" : "string"
         },
-        "admin" : {
+        "executor" : {
           "type" : "boolean"
         },
-        "executor" : {
+        "admin" : {
           "type" : "boolean"
         }
       },

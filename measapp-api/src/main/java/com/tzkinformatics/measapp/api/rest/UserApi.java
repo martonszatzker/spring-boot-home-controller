@@ -10,17 +10,16 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping(value = "/api/user")
 public class UserApi {
 
@@ -28,7 +27,6 @@ public class UserApi {
 
     @Autowired
     private UserApiService service;
-
 
     @GetMapping("showMeTestUser")
     public ResponseEntity<PagingResponse<UserData>> testCall() {
@@ -49,10 +47,18 @@ public class UserApi {
 
     @PostConstruct
     @PostMapping
-    public void addTestUser() {
+    @ApiOperation(value = "Add me as test user")
+    public ResponseEntity<UserData> addTestUser() throws Throwable{
         log.debug("<----------- test is runned ---------->");
         UserData user1 = new UserData();
-        UserData user2 = new UserData();
+        user1.setUserName("Szatzker Marci");
+        user1.setEmailAddress("marton.szatzker@gmail.com");
+        user1.setAdmin(false);
+        user1.setLocation("Székesfehérvár");
+        user1.setUserName("Szatzker Marci");
 
+        service.save(user1);
+
+        return new ResponseEntity<>(user1, HttpStatus.OK);
     }
 }

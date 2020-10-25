@@ -19,4 +19,5 @@ public interface UserApiService {
 
     ResponseEntity handleException(Throwable t);
 
+    ResponseEntity<UserData> save(UserData user) throws Throwable;
 }

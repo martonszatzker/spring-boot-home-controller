@@ -28,7 +28,7 @@ import { Configuration }                                     from '../configurat
 @Injectable()
 export class DefaultService {
 
-    protected basePath = 'http://localhost:8090/api';
+    protected basePath = 'http://localhost:8090/';
     public defaultHeaders = new HttpHeaders();
     public configuration = new Configuration();
 
@@ -58,8 +58,8 @@ export class DefaultService {
 
 
     /**
-     * 
-     * 
+     *
+     *
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
@@ -95,7 +95,7 @@ export class DefaultService {
 
     /**
      * Returns all test user
-     * 
+     *
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
@@ -129,8 +129,8 @@ export class DefaultService {
     }
 
     /**
-     * 
-     * 
+     *
+     *
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
